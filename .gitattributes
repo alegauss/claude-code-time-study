@@ -1,0 +1,7 @@
+# Normalise line endings in the repository so the generated page does not show
+# up as fully rewritten every time it is built on a different machine.
+* text=auto eol=lf
+
+# Generated output: keep it out of diffs and language statistics. It is a build
+# artefact, reviewed by opening it, not by reading the diff.
+docs/index.html -diff linguist-generated

@@ -1,0 +1,40 @@
+# --------------------------------------------------------------------------
+# Measurement output. Every one of these files embeds absolute local paths and
+# client project names, so none of them may be committed to a public repo.
+# The only publishable build output is docs/index.html, which is produced by
+# build.cmd and checked by verify_public.py.
+# --------------------------------------------------------------------------
+data.json
+repos.json
+git_delta.json
+before_after.json
+report_data.json
+
+# Local (unredacted) renders of the report.
+report.html
+report.fragment.html
+docs/index.fragment.html
+
+# --------------------------------------------------------------------------
+# Python
+# --------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+
+# --------------------------------------------------------------------------
+# Editors and OS
+# --------------------------------------------------------------------------
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Claude Code settings list additionalDirectories as absolute local paths,
+# including the user's home directory. Never publish them.
+.claude/
