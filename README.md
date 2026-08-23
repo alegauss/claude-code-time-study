@@ -198,6 +198,11 @@ labels them as assumptions throughout.
   history and would produce false negatives.
 - **Manual testing is a floor, not a total.** Only pauses whose next message showed evidence
   of hands-on testing are counted. See instrumentation below to fix this going forward.
+- **Subagent transcripts are not parsed.** Claude Code writes them under
+  `<session>/subagents/`; the parent session already accrues that wall-clock time, so
+  parsing both would double-count it. The duration is therefore captured but shows up as
+  exploration rather than as the subagent's own activities. Measured directly: 8.5 h across
+  113 transcripts, 1.9% of active work.
 - **One developer, one set of projects.** Nothing generalises without fresh measurement.
 
 ## Measuring manual test time properly, from here on

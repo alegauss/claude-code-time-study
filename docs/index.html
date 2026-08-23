@@ -177,6 +177,36 @@ hr { border: 0; border-top: 1px solid var(--grid); margin: 40px 0 0; }
   .card, .kpi { break-inside: avoid; }
   details { display: none; }
 }
+
+/* ---------- sponsor block (generated from alegauss.github.io/sponsor.json) ----------
+   Product tiles carry the real logos on a white plate — reproduced as published,
+   never recoloured to match this report's palette. */
+.sponsor {
+  display: flex; align-items: flex-start; gap: 16px;
+  margin-top: 30px; padding: 18px 20px;
+  border: 1px solid var(--border); border-radius: 10px; background: var(--surface);
+}
+.sponsor-mark { width: 42px; height: 42px; border-radius: 9px; flex: none; background: #fff; padding: 3px; }
+.sponsor-body { min-width: 0; }
+.sponsor-label { font-size: 11px; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); display: block; }
+.sponsor-name { font-weight: 700; font-size: 15px; display: block; margin-top: 2px; color: var(--ink); text-decoration: none; }
+.sponsor-name:hover { color: var(--s1); }
+.sponsor-body p { margin-top: 7px; font-size: 13px; line-height: 1.65; color: var(--ink-2); }
+.sponsor-body p a { color: var(--s1); text-decoration: underline; text-underline-offset: 3px; }
+.sponsor-products { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.sponsor-product {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 14px 9px 10px; border: 1px solid var(--border); border-radius: 9px;
+  background: var(--page); text-decoration: none; color: var(--ink);
+}
+.sponsor-product:hover { border-color: var(--axis); }
+.sponsor-product img { width: 28px; height: 28px; border-radius: 7px; background: #fff; padding: 2px; flex: none; }
+.sponsor-product b { display: block; font-size: 13px; font-weight: 700; }
+.sponsor-product small { display: block; font-size: 11.5px; line-height: 1.45; color: var(--muted); max-width: 280px; }
+@media (max-width: 620px) {
+  .sponsor { flex-direction: column; }
+  .sponsor-product { width: 100%; }
+}
 </style>
 </head>
 <body>
@@ -460,6 +490,15 @@ hr { border: 0; border-top: 1px solid var(--grid); margin: 40px 0 0; }
         process choice — recorded authorship is always the developer's. So the two populations
         cannot be separated by metadata, and using the co-authorship trailer would produce
         false negatives across most of the history.</li>
+    <li><b>Work delegated to subagents is attributed to the parent session.</b> Claude Code
+        writes a separate transcript for each subagent and workflow run, under
+        <code>&lt;session&gt;/subagents/</code>. Those files are not parsed: while a subagent
+        runs, the parent session is already accruing that wall-clock time, so counting both
+        would double it. The consequence is that the <em>duration</em> is captured but its
+        internal breakdown is credited to exploration rather than to the activities the
+        subagent actually performed. Measured directly, that layer holds
+        <b>8.5 hours across 113 transcripts — 1.9% of active work</b>, so the distortion is
+        small and one-directional.</li>
     <li><b>One developer, one set of projects.</b> Nothing here generalises to other people or
         other codebases without fresh measurement.</li>
     <li><b>Interaction time includes waiting and reading</b>, which would exist without the
@@ -473,6 +512,42 @@ hr { border: 0; border-top: 1px solid var(--grid); margin: 40px 0 0; }
      instructions; once installed, future editions of this report will have manual test time
      measured rather than estimated as a floor.</p>
 </section>
+
+  <!-- sponsor:start — generated from alegauss.github.io/sponsor.json by
+       scripts/sync-sponsor.mjs. Edit the JSON, not this block. Kept as static markup
+       on purpose: a runtime fetch would keep the sponsor out of the HTML that crawlers
+       and LLMs actually read. -->
+  <div class="sponsor">
+    <img class="sponsor-mark" src="viglet/viglet-logo.png"
+         alt="Viglet logo" width="42" height="42" loading="lazy" decoding="async">
+    <div class="sponsor-body">
+      <span class="sponsor-label">Sponsored by</span>
+      <a class="sponsor-name" href="https://www.viglet.org" target="_blank" rel="noopener">Viglet</a>
+      <p>
+        Open source software for search and content. Both Apache 2.0 and self-hostable, on
+        <a href="https://github.com/openviglet" target="_blank" rel="noopener">github.com/openviglet</a>.
+      </p>
+      <div class="sponsor-products">
+        <a class="sponsor-product" href="https://turing.viglet.org" target="_blank" rel="noopener">
+          <img src="viglet/turing-logo.png" alt="Viglet Turing ES logo"
+               width="28" height="28" loading="lazy" decoding="async">
+          <span>
+            <b>Viglet Turing ES</b>
+            <small>enterprise search with semantic navigation, hybrid retrieval (vector + BM25) and generative AI (RAG)</small>
+          </span>
+        </a>
+        <a class="sponsor-product" href="https://shio.viglet.org" target="_blank" rel="noopener">
+          <img src="viglet/shio-logo.png" alt="Viglet Shio CMS logo"
+               width="28" height="28" loading="lazy" decoding="async">
+          <span>
+            <b>Viglet Shio CMS</b>
+            <small>the headless CMS built for coding agents</small>
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- sponsor:end -->
 
 <hr>
 <p style="margin-top:24px;font-size:13px;color:var(--muted)">

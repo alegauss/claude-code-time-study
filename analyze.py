@@ -398,6 +398,11 @@ def main() -> int:
         print(f"not a directory: {root}", file=sys.stderr)
         return 1
 
+    # One level deep only: <project>/<session>.jsonl. Deeper paths hold subagent
+    # and workflow transcripts (<project>/<session>/subagents/...). Those are
+    # deliberately skipped -- the parent session is already accruing wall-clock
+    # while a subagent runs, so parsing both would count that time twice.
+    # Measured separately it is ~1.9% of active work; see README limitations.
     files = sorted(str(p) for p in root.glob("*/*.jsonl"))
     total_mb = sum(os.path.getsize(f) for f in files) / 1e6
     print(f"parsing {len(files)} transcripts ({total_mb:.0f} MB) "
