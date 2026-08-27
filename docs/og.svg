@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Time Study — where the hours actually went on an AI-assisted project">
+  <title>Time Study — where the hours actually went</title>
+  <desc>Social preview: a clock mark beside the report's title, the proposition, and
+  the report URL. The palette is fixed, because this file is rasterised to og.png and
+  cannot follow a reader's theme.</desc>
+
+  <!-- Every line here is measured against the card frame: 90px gutters, so 1020px
+       of usable width between x=90 and x=1110. Type set past that runs off the
+       right edge of the card. The badge is kept short on purpose: this project's
+       URL is the longest in the set, and a wider badge collides with it.
+       Re-measure after editing any string: run og-banner.mjs in check mode,
+       from the scripts folder of the alegauss.github.io repo. -->
+  <defs>
+    <linearGradient id="ts-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#14150f"/>
+      <stop offset="1" stop-color="#1c1d16"/>
+    </linearGradient>
+    <radialGradient id="ts-glow" cx="0.82" cy="0.05" r="0.7">
+      <stop offset="0" stop-color="#2FB894" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#2FB894" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#ts-bg)"/>
+  <rect width="1200" height="630" fill="url(#ts-glow)"/>
+  <rect x="0" y="0" width="1200" height="8" fill="#2FB894"/>
+
+  <!-- the mark, at 128px: the clock the report is an account of -->
+  <g transform="translate(90,120) scale(0.8)">
+    <rect width="160" height="160" rx="34" fill="#22241a" stroke="#383835" stroke-width="2"/>
+    <circle cx="80" cy="80" r="44" fill="none" stroke="#5BD4B4" stroke-width="11"/>
+    <path d="M80 52 V82 H104" fill="none" stroke="#2FB894" stroke-width="11"
+          stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <text x="238" y="180" font-family="DejaVu Sans, sans-serif" font-size="52" font-weight="bold" fill="#eef0e6">Time Study</text>
+  <text x="240" y="216" font-family="DejaVu Sans Mono, monospace" font-size="20" fill="#898781">part of alegauss</text>
+
+  <!-- 620px and 523px of 1020 -->
+  <text x="90" y="360" font-family="DejaVu Sans, sans-serif" font-size="66" font-weight="bold" fill="#eef0e6">Where the hours</text>
+  <text x="90" y="436" font-family="DejaVu Sans, sans-serif" font-size="66" font-weight="bold" fill="#5BD4B4">actually went.</text>
+
+  <!-- 960px of 1020 -->
+  <text x="92" y="502" font-family="DejaVu Sans, sans-serif" font-size="26" fill="#c3c2b7">Every hour attributed from session logs and git history, not from memory.</text>
+
+  <!-- badge width = 46 (dot inset) + 320 (measured text) + 28 (trailing pad).
+       Ends at x=484; the URL starts at 1110-493=617, so 133px of clearance. -->
+  <rect x="90" y="540" width="394" height="46" rx="23" fill="#22241a" stroke="#383835"/>
+  <circle cx="118" cy="563" r="6" fill="#5BD4B4"/>
+  <text x="136" y="571" font-family="DejaVu Sans, sans-serif" font-size="20" fill="#c3c2b7">Logs + git · Assumptions shown</text>
+
+  <text x="1110" y="571" text-anchor="end" font-family="DejaVu Sans Mono, monospace" font-size="20" fill="#898781">alegauss.github.io/claude-code-time-study</text>
+</svg>
