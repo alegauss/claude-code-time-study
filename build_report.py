@@ -536,18 +536,18 @@ BODY = r"""
       </p>
       <div class="sponsor-products">
         <a class="sponsor-product" href="https://turing.viglet.org" target="_blank" rel="noopener">
-          <img src="viglet/turing-logo.png" alt="Viglet Turing ES logo"
+          <img src="viglet/turing-logo.png" alt="Viglet Turing logo"
                width="28" height="28" loading="lazy" decoding="async">
           <span>
-            <b>Viglet Turing ES</b>
+            <b>Viglet Turing</b>
             <small>so visitors find what they came for, with AI answers drawn only from your own content</small>
           </span>
         </a>
         <a class="sponsor-product" href="https://shio.viglet.org" target="_blank" rel="noopener">
-          <img src="viglet/shio-logo.png" alt="Viglet Shio CMS logo"
+          <img src="viglet/shio-logo.png" alt="Viglet Shio logo"
                width="28" height="28" loading="lazy" decoding="async">
           <span>
-            <b>Viglet Shio CMS</b>
+            <b>Viglet Shio</b>
             <small>so a new page goes live the same day, reviewed and approved by your own team</small>
           </span>
         </a>
